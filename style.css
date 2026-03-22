@@ -195,7 +195,7 @@ body {
 }
 
 .skill-tag {
-    background-color: var(--accent);
+    background-color: var(--linen);
     color: var(--text);
     font-size: 1.1rem;
     font-weight: 500;
@@ -212,10 +212,12 @@ body {
 
 /* Add hover effect for skill tags */
 .skill-tag:hover {
+
     /* Move the tag slightly up */
     transform: translateY(-3px);
     /* Darken the background color on hover */
-    background-color: color-mix(in srgb, var(--accent) 90%, black);
+    background-color: var(--text);
+    color: var(--isabelline);
 }
 
 
@@ -610,4 +612,48 @@ span {
 
 .contact-link:hover i {
   transform: scale(1.3);
+}
+
+
+/* Skill grouping (NEW) */
+.skill-group {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Heading style (matches your section-title vibe) */
+.skill-heading {
+    font-family: 'Montserrat Alternates';
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    border-left: 3px solid var(--primary);
+    padding-left: 0.5rem;
+}
+
+/* Keep tags layout SAME as before */
+.skill-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* =========================
+   Responsive Enhancement
+========================= */
+
+/* Tablet and above → show groups in columns */
+@media (min-width: 768px) {
+    .skills-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Desktop → 3 columns */
+@media (min-width: 1024px) {
+    .skills-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
